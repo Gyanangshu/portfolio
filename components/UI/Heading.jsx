@@ -5,7 +5,7 @@ import SplitText from '@/animations/SplitText';
 
 const Heading = ({text}) => {
     return (
-        <div className="relative inline-block h-fit">
+        <div className="relative inline-block h-fit sm:mb-16 mb-10">
             <div
                 className="aurora-glow absolute -z-10"
                 style={{

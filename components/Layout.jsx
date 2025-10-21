@@ -18,7 +18,7 @@ const menu = [
 ];
 
 const Layout = ({ children }) => {
-    // const [scrolled, setScrolled] = useState(false)
+    const [isScrolled, setIsScrolled] = useState(false);
     const pathname = usePathname();
 
     const blacklists = [
@@ -35,32 +35,64 @@ const Layout = ({ children }) => {
 
     console.log(pathname)
 
-    // useEffect(() => {
-    //     const handleScroll = () => {
-    //         setScrolled(window.scrollY > 50)
-    //     }
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 50) {
+                setIsScrolled(true);
+            } else {
+                setIsScrolled(false);
+            }
+        };
 
-    //     window.addEventListener("scroll", handleScroll)
-    //     return () => window.removeEventListener("scroll", handleScroll)
-    // }, [])
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
 
     return (
         <div className="flex flex-col min-h-svh relative overflow-hidden max-w-(--screen-width) mx-auto font-urbanist">
             <nav
-                className="fixed top-7 left-0 mx-auto w-full z-[99999] px-(--padding-small-screen) md:px-(--padding-large-screen)"
+                className={`fixed left-0 mx-auto w-full z-[99999] transition-all duration-500 ease-in-out ${isScrolled
+                        ? "top-7 px-(--padding-small-screen) md:px-(--padding-large-screen)"
+                        : "top-0 px-0"
+                    }`}
             >
-                <div className="max-w-2xl mx-auto px-8 py-4 flex justify-between items-center bg-white/30 text-white rounded-4xl transition-all duration-500 border-2 border-white/15">
+                <div
+                    className={`mx-auto flex justify-between items-center text-white transition-all duration-500 ease-in-out ${isScrolled
+                            ? "max-w-2xl px-8 py-4 rounded-4xl  bg-gradient-to-r from-(--bg-dark-color) via-70% to-purple-950 border border-purple-950"
+                            : "px-8 md:px-(--padding-large-screen) max-w-(--content-width) mx-auto py-6 rounded-none border border-transparent"
+                        }`}
+                >
                     <h1 className="text-lg">Navbar</h1>
                     <ul className="flex items-center gap-4">
                         {menu?.map((item, index) => (
                             <Link key={index} href={item.href}>
-                                <li className={`cursor-pointer ${pathname === item.href && "bg-(--color-purple) px-3 pb-0.5 rounded-xl"}`}>{item.label}</li>
+                                <li
+                                    className={`cursor-pointer ${pathname === item.href &&
+                                        "bg-gradient-to-r from-blue-950 to-purple-950 px-3 pb-0.5 rounded-xl"
+                                        }`}
+                                >
+                                    {item.label}
+                                </li>
                             </Link>
                         ))}
                     </ul>
-                    <div className='flex items-center gap-4'>
-                        <Link href="" target='_blank' title='Linkedin' className='hover:scale-105'><SlSocialLinkedin size={18} /></Link>
-                        <Link href="" target='_blank' title='GitHub' className='hover:scale-105'><LuGithub size={18} /></Link>
+                    <div className="flex items-center gap-4">
+                        <Link
+                            href=""
+                            target="_blank"
+                            title="Linkedin"
+                            className="hover:scale-105"
+                        >
+                            <SlSocialLinkedin size={18} />
+                        </Link>
+                        <Link
+                            href=""
+                            target="_blank"
+                            title="GitHub"
+                            className="hover:scale-105"
+                        >
+                            <LuGithub size={18} />
+                        </Link>
                     </div>
                 </div>
             </nav>
