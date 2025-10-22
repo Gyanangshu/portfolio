@@ -90,11 +90,11 @@ const Carousel = (props) => {
             </div> */}
             <div className="overflow-y-visible" ref={emblaRef}>
                 <div className="embla__container">
-                    {slides?.map((item, index) => (
-                        <div key={item.id} className='sm:max-w-[26rem] max-w-[23rem] md:mt-20 mt-6 embla__slide'>
+                    {slides?.map((item) => (
+                        <div key={item.id} className='sm:max-w-[26rem] max-w-[23rem] md:mt-20 mt-6 embla__slide cursor-grab'>
                             <div className={`border border-(--border-color) rounded-xl shadow-lg hover:shadow-purple-900 transition-all duration-700 ease-in-out`}>
                                 <div className='h-80 max-w-[26rem] border-b border-(--border-color) overflow-hidden embla__slide__img'>
-                                    <img className='h-full w-full rounded-t-xl' src={`https://picsum.photos/600/350?v=${index}`} alt="project image" />
+                                    <img className='h-full w-full rounded-t-xl' src={`https://picsum.photos/600/350?v=${item.id}`} alt="project image" />
                                 </div>
                                 <div className="p-5">
                                     <h3 className='text-3xl font-semibold'>{item.title}</h3>
