@@ -200,7 +200,7 @@ html {
 @media (max-width: 768px) {
   .embla {
     max-width: 100%;
-    margin: auto;
+    margin-inline: auto;
     --slide-height: 19rem;
     --slide-spacing: 1rem;
     --slide-size: 100%;

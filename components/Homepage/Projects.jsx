@@ -1,8 +1,9 @@
 'use client'
 
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import Heading from '../UI/Heading';
-import Carousel from '../UI/Carousel/Carousel';
+const Carousel = lazy(() => import('../UI/Carousel/Carousel'));
+import { ImSpinner9 } from "react-icons/im";
 
 const Projects = () => {
 
@@ -15,7 +16,7 @@ const Projects = () => {
             githubLink: "",
             demoLink: "",
             tag: "",
-            img: ""            
+            img: ""
         },
         {
             id: 2,
@@ -24,7 +25,7 @@ const Projects = () => {
             githubLink: "",
             demoLink: "",
             tag: "",
-            img: ""            
+            img: ""
         },
         {
             id: 3,
@@ -33,7 +34,7 @@ const Projects = () => {
             githubLink: "",
             demoLink: "",
             tag: "",
-            img: ""         
+            img: ""
         },
         {
             id: 4,
@@ -42,7 +43,7 @@ const Projects = () => {
             githubLink: "",
             demoLink: "",
             tag: "",
-            img: ""           
+            img: ""
         },
     ];
 
@@ -53,9 +54,9 @@ const Projects = () => {
                 <p>All</p>
                 <p>Frontend</p>
             </div>
-            <div>
+            <Suspense fallback={<div className='w-full h-full my-8 flex items-center justify-center'><ImSpinner9 className="w-8 h-8 animate-spin text-(--color-purple)" /></div>}>
                 <Carousel slides={projectSlides} options={OPTIONS} />
-            </div>
+            </Suspense>
         </div>
     )
 }

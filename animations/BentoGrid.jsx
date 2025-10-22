@@ -98,9 +98,10 @@ const cardData = [
   },
   {
     color: '#060010',
-    title: 'Automation',
-    description: 'Streamline workflows',
-    label: 'Past Works'
+    title: '',
+    description: '',
+    pastWorks: ["Developed scalable web apps using MERN stack", "Integrated ABDM APIs for national health data exchange", "Deployed containerized apps on GCP using Docker & GitHub Action", "Improved SEO scores and Lighthouse metrics for higher site visibility"],
+    label: 'Past Company Works'
   },
   {
     color: '#060010',
@@ -865,33 +866,40 @@ const BentoGrid = ({
                 <div className="card__header flex justify-between gap-3 relative text-white">
                   <span className="card__label text-base">{card.label}</span>
                 </div>
+
                 <div className="card__content flex flex-col relative text-white">
                   {card.skills ?
-                    <div className=''>
-                      {/* {card.skills.map((skill, index) => (
-                        <div key={index} className='flex items-center gap-2 rounded-3xl pl-3 pr-4 py-1 border border-(--color-border) w-max'>
-                          <Image height={25} width={25} src={skill.icon} alt={skill.name} />
-                          <p className='font-medium'>{skill.name}</p>
-                        </div>
-                      ))} */}
-                      <SkillsMarquee skillsList={card.skills}/>
+                    <div>
+                      <SkillsMarquee skillsList={card.skills} />
                     </div>
                     :
                     card.icon ?
-                      <h3 className={`card__title font-bold text-6xl m-0 mb-1 ${textAutoHide ? 'text-clamp-1' : ''}`}>
+                      card.label === "Resume" &&
+                      <a
+                        target="_blank"
+                        href="/resume.pdf"
+                        rel="noopener noreferrer" className={`card__title font-bold text-6xl m-0 mb-1 cursor-pointer ${textAutoHide ? 'text-clamp-1' : ''}`}>
                         <card.icon />
-                      </h3>
+                      </a>
                       :
                       <h3 className={`card__title font-bold text-6xl m-0 mb-1 ${textAutoHide ? 'text-clamp-1' : ''}`}>
                         {card.title}
                       </h3>
                   }
-                  
-                  {card.skills ? null
+                  {card.skills ?
+                    null
                     :
-                    <p className={`card__description text-base leading-5 opacity-90 ${textAutoHide ? 'text-clamp-2' : ''}`}>
-                      {card.description}
-                    </p>
+                    card.pastWorks ?
+                      <ul className="list-disc list-outside pl-4 pt-4">
+                        {card.pastWorks.map((item, index) => (
+                          <li key={index} >{item}</li>
+                        ))}
+
+                      </ul>
+                      :
+                      <p className={`card__description text-base leading-5 opacity-90 ${textAutoHide ? 'text-clamp-2' : ''}`}>
+                        {card.description}
+                      </p>
                   }
                 </div>
               </div>

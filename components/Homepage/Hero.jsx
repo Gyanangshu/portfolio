@@ -1,11 +1,11 @@
 'use client'
 
-import Silk from "@/animations/Silk"
 // import { useTheme } from "next-themes"
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import Button from "../UI/Button";
 import { LuArrowRight } from "react-icons/lu";
 import Link from "next/link";
+const Silk = lazy(() => import("@/animations/Silk"))
 
 const Hero = () => {
   // const { theme, setTheme } = useTheme()
@@ -15,13 +15,15 @@ const Hero = () => {
       {/* Background Layer */}
       <div className="absolute inset-0 z-0">
         {/* "#636CCB" */}
-        <Silk
-          speed={4}
-          scale={0.8}
-          color="#5b21ad"
-          noiseIntensity={1}
-          rotation={0}
-        />
+        <Suspense fallback={<div className='bg-(--bg-dark-color)'/>}>
+          <Silk
+            speed={4}
+            scale={0.8}
+            color="#5b21ad"
+            noiseIntensity={1}
+            rotation={0}
+          />
+        </Suspense>
       </div>
       {/* inline-block bg-gradient-to-r from-red-700 to-purple-500 bg-clip-text text-transparent */}
       {/* Foreground Content */}
@@ -36,7 +38,7 @@ const Hero = () => {
             <Button bgColor={"bg-gradient-to-r from-blue-500 to-purple-700"} text={"View Projects"} icon={<LuArrowRight size={15} />} />
           </Link>
           <Link className="w-full" href="#contact">
-          <Button bgColor={"border border-white/20 bg-gradient-to-r from-blue-950 to-purple-950"} text={"Get In Touch"} />
+            <Button bgColor={"border border-white/20 bg-gradient-to-r from-blue-950 to-purple-950"} text={"Get In Touch"} />
           </Link>
         </div>
       </div>

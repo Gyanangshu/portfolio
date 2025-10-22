@@ -11,10 +11,10 @@ const menu = [
         label: "Home",
         href: "/"
     },
-    {
-        label: "Blog",
-        href: "/blog"
-    }
+    // {
+    //     label: "Blog",
+    //     href: "/blog"
+    // }
 ];
 
 const Layout = ({ children }) => {
@@ -58,7 +58,7 @@ const Layout = ({ children }) => {
             >
                 <div
                     className={`mx-auto flex justify-between items-center text-white transition-all duration-500 ease-in-out ${isScrolled
-                            ? "max-w-2xl px-8 py-4 rounded-4xl  bg-gradient-to-r from-(--bg-dark-color) via-70% to-purple-950 border border-purple-950"
+                            ? "max-w-2xl px-8 py-4 rounded-4xl  bg-gradient-to-r from-(--bg-dark-color) via-50% to-purple-950 border-2 border-purple-700"
                             : "px-8 md:px-(--padding-large-screen) max-w-(--content-width) mx-auto py-6 rounded-none border border-transparent"
                         }`}
                 >
