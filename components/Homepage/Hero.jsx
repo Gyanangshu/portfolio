@@ -1,21 +1,50 @@
 'use client'
 
-// import { useTheme } from "next-themes"
-import React, { lazy, Suspense } from 'react';
+import React, { lazy, Suspense, useRef, useEffect } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Button from "../UI/Button";
 import { LuArrowRight } from "react-icons/lu";
 import Link from "next/link";
-const Silk = lazy(() => import("@/animations/Silk"))
+const Silk = lazy(() => import("@/animations/Silk"));
 
 const Hero = () => {
-  // const { theme, setTheme } = useTheme()
+  const heroRef = useRef(null);
+  const backgroundRef = useRef(null);
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Animate the background corners
+    gsap.to(backgroundRef.current, {
+      borderBottomLeftRadius: '400px',
+      borderBottomRightRadius: '400px',
+      scrollTrigger: {
+        trigger: heroRef.current,
+        start: 'top top',
+        end: '+=800',
+        scrub: 0.5, // Smooth scrubbing effect (1 second delay)
+        // markers: true // Uncomment to debug
+      }
+    });
+
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
+  }, []);
 
   return (
-    <section className="relative flex items-center justify-center min-h-screen text-white">
-      {/* Background Layer */}
-      <div className="absolute inset-0 z-0">
-        {/* "#636CCB" */}
-        <Suspense fallback={<div className='bg-(--bg-dark-color)'/>}>
+    <section 
+      ref={heroRef}
+      className="relative flex items-center justify-center min-h-screen text-white overflow-hidden"
+    >
+      {/* Background Layer with Curve Effect */}
+      <div 
+        ref={backgroundRef}
+        className="absolute inset-0 z-0 overflow-hidden"
+        style={{ borderBottomLeftRadius: '0px', borderBottomRightRadius: '0px' }}
+      >
+        <Suspense fallback={<div className='bg-(--bg-dark-color) w-full h-full'/>}>
           <Silk
             speed={4}
             scale={0.8}
@@ -25,20 +54,31 @@ const Hero = () => {
           />
         </Suspense>
       </div>
-      {/* inline-block bg-gradient-to-r from-red-700 to-purple-500 bg-clip-text text-transparent */}
+
       {/* Foreground Content */}
-      <div className="relative flex flex-col items-center gap-10 px-(--padding-small-screen) md:px-(--padding-large-screen)">
+      <div className="relative flex flex-col items-center gap-10 px-(--padding-small-screen) md:px-(--padding-large-screen) z-10">
         <div className="sm:text-center text-left">
-          <h1 className="lg:text-8xl lg:leading-32 sm:text-6xl sm:leading-20 text-5xl leading-14 font-semibold md:mb-4 mb-6">Hi, I'm Gyanangshu</h1>
-          <p className="sm:text-xl text-lg max-w-3xl sm:leading-9 leading-6 mx-auto">A Frontend & MERN Stack Developer who crafts performant, scalable, and user-friendly web applications</p>
+          <h1 className="lg:text-8xl lg:leading-32 sm:text-6xl sm:leading-20 text-5xl leading-14 font-semibold md:mb-4 mb-6">
+            Hi, I'm Gyanangshu
+          </h1>
+          <p className="sm:text-xl text-lg max-w-3xl sm:leading-9 leading-6 mx-auto">
+            A Frontend & MERN Stack Developer who crafts performant, scalable, and user-friendly web applications
+          </p>
         </div>
 
         <div className="flex items-center justify-center sm:flex-row flex-col gap-3 sm:w-fit w-full">
           <Link className="w-full" href="#projects">
-            <Button bgColor={"bg-gradient-to-r from-blue-500 to-purple-700"} text={"View Projects"} icon={<LuArrowRight size={15} />} />
+            <Button 
+              bgColor={"bg-gradient-to-r from-blue-500 to-purple-700"} 
+              text={"View Projects"} 
+              icon={<LuArrowRight size={15} />} 
+            />
           </Link>
           <Link className="w-full" href="#contact">
-            <Button bgColor={"border border-white/20 bg-gradient-to-r from-blue-950 to-purple-950"} text={"Get In Touch"} />
+            <Button 
+              bgColor={"border border-white/20 bg-gradient-to-r from-blue-950 to-purple-950"} 
+              text={"Get In Touch"} 
+            />
           </Link>
         </div>
       </div>

@@ -4,7 +4,7 @@ import Hero from "@/components/Homepage/Hero"
 import Projects from "@/components/Homepage/Projects"
 
 export const metadata = {
-  title: "GM - Portfolio"
+  title: "Portfolio - Home"
 }
 
 const Homepage = async () => {

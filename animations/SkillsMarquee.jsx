@@ -49,7 +49,7 @@ const MarqueeRow = ({ speed = 20, reverse = false, skills }) => {
         {[...skills, ...skills].map((skill, i) => (
           <div
             key={i}
-            className="flex items-center gap-2 rounded-3xl pl-3 pr-4 py-1 border border-(--color-border) w-max backdrop-blur-md"
+            className="flex items-center gap-1.5 rounded-3xl pl-3 pr-4 py-1 border-2 border-white/40 w-max backdrop-blur-md"
           >
             <Image
               src={skill.icon.src || skill.icon}

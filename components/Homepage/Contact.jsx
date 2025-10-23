@@ -61,15 +61,15 @@ const Contact = () => {
                     <form ref={form} onSubmit={sendEmail} className='w-full flex flex-col gap-5 max-w-xl'>
                         <div>
                             <label className='font-medium'>Name</label>
-                            <input required type="text" name='name' className='border-2 rounded-lg w-full py-2 px-3 mt-1' placeholder='Enter your name' />
+                            <input required type="text" name='name' className='border-2 border-white/40 hover:border-white rounded-lg w-full py-2 px-3 mt-1' placeholder='Enter your name' />
                         </div>
                         <div>
                             <label className='font-medium'>Email</label>
-                            <input required type="email" name='email' className='border-2 rounded-lg w-full py-2 px-3 mt-1' placeholder='Enter your email' />
+                            <input required type="email" name='email' className='border-2 border-white/40 hover:border-white rounded-lg w-full py-2 px-3 mt-1' placeholder='Enter your email' />
                         </div>
                         <div>
                             <label className='font-medium'>Message</label>
-                            <textarea required name='message' className='border-2 rounded-lg w-full py-2 px-3 mt-1 min-h-[150px]' placeholder='Enter your message' />
+                            <textarea required name='message' className='border-2 border-white/40 hover:border-white rounded-lg w-full py-2 px-3 mt-1 min-h-[150px]' placeholder='Enter your message' />
                         </div>
                         {message &&
                             <p className='text-lg'>✅ Thank you for contacting me. I'll reply back within 24 hours.</p>
@@ -78,7 +78,7 @@ const Contact = () => {
                             <p className='text-red-400 text-lg'>❌ Something went wrong. Please try again</p>
                         }
 
-                        <Button text={loading ? <ImSpinner9 size={16} className='animate-spin'/> : "Submit"} disabled={loading} bgColor={`border-2`} icon={!loading && <LuSend size={16} />} />
+                        <Button text={loading ? <ImSpinner9 size={16} className='animate-spin'/> : "Submit"} disabled={loading} bgColor={`border-2 border-white/40 hover:border-white`} icon={!loading && <LuSend size={16} />} />
                     </form>
                 </div>
             </div>

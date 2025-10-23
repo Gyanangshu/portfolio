@@ -4,6 +4,10 @@ import React, { lazy, Suspense, useMemo, useState } from 'react';
 import Heading from '../UI/Heading';
 const Carousel = lazy(() => import('../UI/Carousel/Carousel'));
 import { ImSpinner9 } from "react-icons/im";
+import telemedLogo from "../../assets/projects/telemed/logo.svg";
+import TeleMed from "../../assets/projects/telemed/TeleMed.webp";
+import TokenLogo from "../../assets/projects/token/icon.svg";
+import Token from "../../assets/projects/token/token.webp";
 
 const Projects = () => {
 
@@ -11,21 +15,23 @@ const Projects = () => {
     const projectSlides = [
         {
             id: 1,
-            title: "Telemed1",
+            title: "NFT Token Tracker",
             description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus nobis fugiat obcaecati, incidunt sapiente accusantium expedita veniam eveniet voluptatum, doloribus quas consequuntur nulla animi molestiae soluta, non impedit dolore quia.",
-            githubLink: "",
-            demoLink: "",
-            tag: "Full Stack",
-            img: ""
+            githubLink: "https://github.com/Gyanangshu/NFT-Token-Tracker",
+            demoLink: "https://tokenportfolio.netlify.app",
+            tag: "Frontend",
+            img: Token,
+            logo: TokenLogo
         },
         {
             id: 2,
-            title: "Telemed2",
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus nobis fugiat obcaecati, incidunt sapiente accusantium expedita veniam eveniet voluptatum, doloribus quas consequuntur nulla animi molestiae soluta, non impedit dolore quia.",
-            githubLink: "",
-            demoLink: "",
-            tag: "Frontend",
-            img: ""
+            title: "TeleMed",
+            description: "Reimagining rural healthcare with real-time video consultations with doctors. Powered by simple & scalable technology. Giving every patient - no matter how remote - the chance to be seen, heard, and treated with dignity",
+            githubLink: "https://github.com/Gyanangshu/TeleMed",
+            demoLink: "https://telemedhealthcare.netlify.app/",
+            tag: "Full Stack",
+            img: TeleMed,
+            logo: telemedLogo
         },
         {
             id: 3,
@@ -34,7 +40,8 @@ const Projects = () => {
             githubLink: "",
             demoLink: "",
             tag: "Frontend",
-            img: ""
+            img: null,
+            logo: null
         },
         {
             id: 4,
@@ -43,7 +50,8 @@ const Projects = () => {
             githubLink: "",
             demoLink: "",
             tag: "Full Stack",
-            img: ""
+            img:null,
+            logo:null
         },
     ];
 
@@ -65,7 +73,7 @@ const Projects = () => {
                 {buttonList.map((item, index) => (
                     <button
                         key={index}
-                        className={`px-8 cursor-pointer text-lg font-medium transition-colors duration-300 ease-in-out first:pl-0 last:pr-0
+                        className={`sm:px-8 px-4 cursor-pointer text-lg font-medium transition-colors duration-300 ease-in-out first:pl-0 last:pr-0
                             ${selectedListItem === item ? "" : "text-white hover:text-gray-300"}`}
                         onClick={() => setSelectedListItem(item)}
                     >

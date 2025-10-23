@@ -42,7 +42,7 @@ const cardData = [
   },
   {
     color: '#060010',
-    title: 'Collaboration',
+    title: '',
     description: 'Work together seamlessly',
     label: 'Skills',
     skills: [
@@ -105,9 +105,9 @@ const cardData = [
   },
   {
     color: '#060010',
-    title: 'Integration',
-    description: 'Connect favorite tools',
-    label: 'Connectivity'
+    title: '4+',
+    description: 'Cross-Functional Teams',
+    label: 'Collaboration'
   },
   {
     color: '#060010',

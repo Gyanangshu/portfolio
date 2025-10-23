@@ -76,9 +76,9 @@ const Layout = ({ children }) => {
                             </Link>
                         ))}
                     </ul>
-                    <div className="flex items-center gap-4">
+                    <div className="flex items-center md:gap-6 gap-4">
                         <Link
-                            href=""
+                            href="https://www.linkedin.com/in/gyanangshu-misra-63136b18a"
                             target="_blank"
                             title="Linkedin"
                             className="hover:scale-105"
@@ -86,7 +86,7 @@ const Layout = ({ children }) => {
                             <SlSocialLinkedin size={18} />
                         </Link>
                         <Link
-                            href=""
+                            href="https://github.com/Gyanangshu"
                             target="_blank"
                             title="GitHub"
                             className="hover:scale-105"
