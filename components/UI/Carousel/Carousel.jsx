@@ -112,7 +112,7 @@ const Carousel = (props) => {
                         {/* Logo with hover animation */}
                         <div className='absolute inset-0 flex items-center justify-center'>
                             <Image
-                                className='w-20 h-20 object-cover drop-shadow-2xl bg-white rounded-[26px]'
+                                className='w-20 h-20 object-cover drop-shadow-2xl bg-transparent rounded-[26px]'
                                 style={{ filter: 'drop-shadow(0 0 20px rgba(139, 92, 246, 0.4))' }}
                                 src={item.logo}
                                 alt={`${item.title} logo`}

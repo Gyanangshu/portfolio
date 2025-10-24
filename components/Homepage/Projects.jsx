@@ -8,6 +8,10 @@ import telemedLogo from "../../assets/projects/telemed/logo.svg";
 import TeleMed from "../../assets/projects/telemed/TeleMed.webp";
 import TokenLogo from "../../assets/projects/token/icon.svg";
 import Token from "../../assets/projects/token/token.webp";
+import InstaCover from "../../assets/projects/instaStoryViewer/insta.webp";
+import Instalogo from "../../assets/projects/instaStoryViewer/instalogo.webp";
+import SearchBarLogo from "../../assets/projects/searchBar/searchBarLogo.webp";
+import SearchBarCover from "../../assets/projects/searchBar/searchBarCover.webp";
 
 const Projects = () => {
 
@@ -35,23 +39,23 @@ const Projects = () => {
         },
         {
             id: 3,
-            title: "Telemed3",
+            title: "Instagram Story Viewer",
             description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus nobis fugiat obcaecati, incidunt sapiente accusantium expedita veniam eveniet voluptatum, doloribus quas consequuntur nulla animi molestiae soluta, non impedit dolore quia.",
-            githubLink: "",
-            demoLink: "",
+            githubLink: "https://github.com/Gyanangshu/Instagram",
+            demoLink: "https://gyanangshu-insta-test.netlify.app",
             tag: "Frontend",
-            img: null,
-            logo: null
+            img: InstaCover,
+            logo: Instalogo
         },
         {
             id: 4,
-            title: "Telemed4",
+            title: "Animated Search Bar",
             description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus nobis fugiat obcaecati, incidunt sapiente accusantium expedita veniam eveniet voluptatum, doloribus quas consequuntur nulla animi molestiae soluta, non impedit dolore quia.",
-            githubLink: "",
-            demoLink: "",
-            tag: "Full Stack",
-            img:null,
-            logo:null
+            githubLink: "https://github.com/Gyanangshu/Animated-search-bar",
+            demoLink: "https://search-animations.netlify.app",
+            tag: "Frontend",
+            img:SearchBarCover,
+            logo:SearchBarLogo
         },
     ];
 
