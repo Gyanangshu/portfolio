@@ -70,7 +70,7 @@ const Projects = () => {
         return projectSlides.filter((project) => project.tag === selectedListItem);
     }, [selectedListItem]);
 
-    console.log("filteredProjects: ",filteredProjects);
+    // console.log("filteredProjects: ",filteredProjects);
 
     return (
         <div className='text-white py-24 md:px-(--padding-large-screen) px-(--padding-small-screen) w-full flex flex-col items-center' id="projects">

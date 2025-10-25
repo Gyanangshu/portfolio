@@ -17,8 +17,8 @@ const Hero = () => {
 
     // Animate the background corners
     gsap.to(backgroundRef.current, {
-      borderBottomLeftRadius: '400px',
-      borderBottomRightRadius: '400px',
+      borderBottomLeftRadius: '150px',
+      borderBottomRightRadius: '150px',
       scrollTrigger: {
         trigger: heroRef.current,
         start: 'top top',

@@ -33,7 +33,7 @@ const Layout = ({ children }) => {
         )
     }
 
-    console.log(pathname)
+    // console.log(pathname)
 
     useEffect(() => {
         const handleScroll = () => {
