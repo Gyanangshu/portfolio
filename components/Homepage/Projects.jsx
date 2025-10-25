@@ -17,18 +17,9 @@ const Projects = () => {
 
     const OPTIONS = { loop: true }
     const projectSlides = [
+        
         {
             id: 1,
-            title: "NFT Token Tracker",
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus nobis fugiat obcaecati, incidunt sapiente accusantium expedita veniam eveniet voluptatum, doloribus quas consequuntur nulla animi molestiae soluta, non impedit dolore quia.",
-            githubLink: "https://github.com/Gyanangshu/NFT-Token-Tracker",
-            demoLink: "https://tokenportfolio.netlify.app",
-            tag: "Frontend",
-            img: Token,
-            logo: TokenLogo
-        },
-        {
-            id: 2,
             title: "TeleMed",
             description: "Reimagining rural healthcare with real-time video consultations with doctors. Powered by simple & scalable technology. Giving every patient - no matter how remote - the chance to be seen, heard, and treated with dignity",
             githubLink: "https://github.com/Gyanangshu/TeleMed",
@@ -36,6 +27,16 @@ const Projects = () => {
             tag: "Full Stack",
             img: TeleMed,
             logo: telemedLogo
+        },
+        {
+            id: 2,
+            title: "NFT Token Tracker",
+            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus nobis fugiat obcaecati, incidunt sapiente accusantium expedita veniam eveniet voluptatum, doloribus quas consequuntur nulla animi molestiae soluta, non impedit dolore quia.",
+            githubLink: "https://github.com/Gyanangshu/NFT-Token-Tracker",
+            demoLink: "https://tokenportfolio.netlify.app",
+            tag: "Frontend",
+            img: Token,
+            logo: TokenLogo
         },
         {
             id: 3,
@@ -68,6 +69,8 @@ const Projects = () => {
         }
         return projectSlides.filter((project) => project.tag === selectedListItem);
     }, [selectedListItem]);
+
+    console.log("filteredProjects: ",filteredProjects);
 
     return (
         <div className='text-white py-24 md:px-(--padding-large-screen) px-(--padding-small-screen) w-full flex flex-col items-center' id="projects">

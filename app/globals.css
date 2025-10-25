@@ -191,7 +191,7 @@ html {
 /* carousel css */
 .embla {
   max-width: 76rem;
-  margin: auto;
+  margin-inline: auto;
   --slide-height: 19rem;
   --slide-spacing: 1.3rem;
   --slide-size: 100%;
