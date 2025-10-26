@@ -13,7 +13,7 @@ const About = () => {
             <Suspense fallback={<div className='w-full h-full my-8 flex items-center justify-center'><ImSpinner9 className="w-8 h-8 animate-spin text-(--color-purple)" /></div>}>
                 <BentoGrid
                     textAutoHide={true}
-                    enableStars={false}
+                    enableStars={true}
                     enableSpotlight={true}
                     enableBorderGlow={true}
                     enableTilt={true}

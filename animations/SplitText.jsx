@@ -44,7 +44,7 @@ const SplitText = ({
         try {
           el._rbsplitInstance.revert();
         } catch (_) {
-          /* ignore */
+         
         }
         el._rbsplitInstance = null;
       }

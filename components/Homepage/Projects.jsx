@@ -12,12 +12,13 @@ import InstaCover from "../../assets/projects/instaStoryViewer/insta.webp";
 import Instalogo from "../../assets/projects/instaStoryViewer/instalogo.webp";
 import SearchBarLogo from "../../assets/projects/searchBar/searchBarLogo.webp";
 import SearchBarCover from "../../assets/projects/searchBar/searchBarCover.webp";
+import AuthorLogo from "../../assets/projects/authorPortfolio/logo.webp";
+import AuthorCover from "../../assets/projects/authorPortfolio/cover.webp";
 
 const Projects = () => {
 
     const OPTIONS = { loop: true }
-    const projectSlides = [
-        
+    const projectSlides = [  
         {
             id: 1,
             title: "TeleMed",
@@ -31,7 +32,7 @@ const Projects = () => {
         {
             id: 2,
             title: "NFT Token Tracker",
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus nobis fugiat obcaecati, incidunt sapiente accusantium expedita veniam eveniet voluptatum, doloribus quas consequuntur nulla animi molestiae soluta, non impedit dolore quia.",
+            description: "Real-time NFT portfolio tracker with multi-chain support, live price feeds, wallet integration, and advanced analytics. Tracks asset performance, transaction history, and market trends across major blockchain networks",
             githubLink: "https://github.com/Gyanangshu/NFT-Token-Tracker",
             demoLink: "https://tokenportfolio.netlify.app",
             tag: "Frontend",
@@ -41,7 +42,7 @@ const Projects = () => {
         {
             id: 3,
             title: "Instagram Story Viewer",
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus nobis fugiat obcaecati, incidunt sapiente accusantium expedita veniam eveniet voluptatum, doloribus quas consequuntur nulla animi molestiae soluta, non impedit dolore quia.",
+            description: "Mobile first Instagram Stories clone featuring swipe gestures, auto-advance timers, and touch-hold pause functionality using React and CSS animations. Progressive image loading, story segmentation, and seamless navigation with gesture-based controls",
             githubLink: "https://github.com/Gyanangshu/Instagram",
             demoLink: "https://gyanangshu-insta-test.netlify.app",
             tag: "Frontend",
@@ -51,12 +52,22 @@ const Projects = () => {
         {
             id: 4,
             title: "Animated Search Bar",
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus nobis fugiat obcaecati, incidunt sapiente accusantium expedita veniam eveniet voluptatum, doloribus quas consequuntur nulla animi molestiae soluta, non impedit dolore quia.",
+            description: "Interactive animated search bar showcase featuring smooth expand animations, dynamic placeholders, and micro-interactions. Includes multiple design variants with CSS3 transitions, hover effects, and focus states for enhanced user experience",
             githubLink: "https://github.com/Gyanangshu/Animated-search-bar",
             demoLink: "https://search-animations.netlify.app",
             tag: "Frontend",
             img:SearchBarCover,
             logo:SearchBarLogo
+        },
+        {
+            id: 5,
+            title: "Author Portfolio Website",
+            description: "Created an elegant author portfolio website with immersive storytelling elements, animated page transitions, and visually striking book displays using React and modern web design principles",
+            githubLink: "https://github.com/Gyanangshu",
+            demoLink: "https://authorpriyanshu.netlify.app",
+            tag: "Frontend",
+            img:AuthorCover,
+            logo:AuthorLogo
         },
     ];
 

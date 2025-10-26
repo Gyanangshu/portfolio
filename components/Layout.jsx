@@ -62,7 +62,7 @@ const Layout = ({ children }) => {
                             : "px-8 md:px-(--padding-large-screen) max-w-(--content-width) mx-auto py-6 rounded-none border border-transparent"
                         }`}
                 >
-                    <h1 className="text-lg">Navbar</h1>
+                    <h1 className="text-lg italic">Gyanangshu</h1>
                     <ul className="flex items-center gap-4">
                         {menu?.map((item, index) => (
                             <Link key={index} href={item.href}>

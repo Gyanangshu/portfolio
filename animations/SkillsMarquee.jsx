@@ -11,7 +11,6 @@ const MarqueeRow = ({ speed = 20, reverse = false, skills }) => {
     const el = rowRef.current;
     const totalWidth = el.scrollWidth / 2;
 
-    // Set initial position for reverse animation
     gsap.set(el, { x: reverse ? -totalWidth : 0 });
 
     tweenRef.current = gsap.to(el, {

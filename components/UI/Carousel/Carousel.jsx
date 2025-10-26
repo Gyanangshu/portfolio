@@ -124,7 +124,7 @@ const Carousel = (props) => {
                     </div>
                     <div className="p-5 flex flex-col flex-grow">
                         <h3 className='text-3xl font-semibold'>{item.title}</h3>
-                        <p className='pt-4 text-gray-500 flex-grow'>{item.description}</p>
+                        <p className='pt-4 text-gray-400 flex-grow text-lg'>{item.description}</p>
                         <div className='flex items-center gap-2 mt-8'>
                             <Link href={item.demoLink} target='_blank'>
                                 <button className='flex items-center gap-2 border-2 border-white/40 px-3 pt-0.5 pb-1 rounded-2xl bg-(--color-purple) cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out'>
